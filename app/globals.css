@@ -1,0 +1,47 @@
+/* --- CSS Variables: ตัวแปรสำหรับใช้ทั่วทั้งเว็บไซต์ --- */
+/* การใช้ตัวแปรช่วยให้การเปลี่ยนสีหรือค่าต่างๆ ในอนาคตทำได้ง่ายจากที่เดียว */
+:root {
+  /* สีพื้นหลัง */
+  --background-light: #fdf5f2;
+  --background-dark: #2a443c;
+
+  /* สีตัวอักษร */
+  --text-dark: #333;
+  --text-light: #ffffff;
+
+  /* สีสำหรับเน้น (Accent Color) */
+  --accent-red: #b85c46;
+}
+
+/* --- Global Reset: การรีเซ็ตสไตล์พื้นฐานของเบราว์เซอร์ --- */
+/* ใช้ * (Universal Selector) เพื่อเลือกทุก element บนหน้าเว็บ */
+* {
+  /* box-sizing: border-box; ทำให้การคำนวณขนาดของกล่อง (width/height)
+     รวม padding และ border เข้าไปด้วย ซึ่งช่วยให้จัด layout ได้ง่ายขึ้น */
+  box-sizing: border-box;
+  /* ลบ padding และ margin เริ่มต้นที่เบราว์เซอร์อาจจะใส่มาให้ */
+  padding: 0;
+  margin: 0;
+}
+
+/* --- HTML & Body Base Styles: สไตล์พื้นฐานสำหรับ <html> และ <body> --- */
+html,
+body {
+  /* กำหนดความกว้างสูงสุดไม่ให้เกินความกว้างของหน้าจอ */
+  max-width: 100vw;
+  /* ป้องกันไม่ให้เกิด horizontal scrollbar (การเลื่อนซ้าย-ขวา) ที่ไม่จำเป็น */
+  overflow-x: hidden;
+}
+
+body {
+  /* กำหนดฟอนต์หลักของเว็บไซต์ โดยใช้ CSS variable ที่ตั้งค่าไว้ใน layout.js */
+  font-family: var(--font-montserrat);
+}
+
+/* --- Link Styles: สไตล์สำหรับลิงก์ (<a>) --- */
+a {
+  /* ให้สีของลิงก์เป็นสีเดียวกับ element แม่ (parent) */
+  color: inherit;
+  /* เอาเส้นใต้ของลิงก์ออก */
+  text-decoration: none;
+}
