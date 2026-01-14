@@ -1,5 +1,5 @@
 import { Kanit, Sarabun } from 'next/font/google';
-import './globals.css';
+import './styles/globals.css';
 
 // --- Font Configuration: การตั้งค่าฟอนต์ ---
 // นำเข้าฟอนต์ Kanit จาก Google Fonts
