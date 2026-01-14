@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from './styles/page.module.css';
+import styles from './page.module.css';
 import SearchFormHomepage from './SearchFormHomepage';
 import {
   GOOGLE_SHEET_ID,
@@ -105,7 +105,7 @@ export default function HomePage() {
       </div>
 
       {/* --- ส่วนแสดงผลด้านขวา (เมนูนำทาง) --- */}
-      <nav className={styles.rightColumn}>
+      <nav className={styles.rightColumn} aria-label="ลิงก์บริการที่เกี่ยวข้อง">
         
         <ul className={styles.navList}>
           {navLinks.map((link) => (

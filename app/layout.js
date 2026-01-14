@@ -1,5 +1,5 @@
 import { Kanit, Sarabun } from 'next/font/google';
-import './styles/globals.css';
+import './globals.css';
 
 // --- Font Configuration: การตั้งค่าฟอนต์ ---
 // นำเข้าฟอนต์ Kanit จาก Google Fonts
@@ -42,7 +42,7 @@ export const metadata = {
   description: 'ตรวจสอบและค้นหาวัน-เวลานัดหมายการทำ Telemedicine (แพทย์ทางไกล) กับโรงพยาบาลชุมชนเทศบาลเมืองกำแพงเพชร ได้ง่ายๆ เพียงกรอกหมายเลขบัตรประชาชน',
 
   // `keywords` คือคำค้นหาที่เกี่ยวข้องกับเว็บไซต์ ช่วยให้ Search Engine เข้าใจเนื้อหาของเว็บ
-  keywords: ['ค้นหานัด', 'Telemedicine', 'แพทย์ทางไกล', 'โรงพยาบาลชุมชนเทศบาลเมืองกำแพงเพชร', 'KPPMCH', 'ตรวจสอบนัดหมาย', 'เช็คคิวนัด'],
+  keywords: ['ค้นหานัด', 'Telemedicine', 'แพทย์ทางไกล', 'โรงพยาบาลชุมชนเทศบาลเมืองกำแพงเพชร', 'KPPMCH', 'ตรวจสอบนัดหมาย', 'เช็คคิวนัด', 'กำแพงเพชร', 'นัดหมอออนไลน์', 'เทศบาลเมืองกำแพงเพชร'],
 
   // `authors` ระบุผู้สร้างหรือเจ้าของเว็บไซต์
   authors: [{ name: 'โรงพยาบาลชุมชนเทศบาลเมืองกำแพงเพชร', url: siteUrl }],
@@ -50,6 +50,19 @@ export const metadata = {
   // `alternates.canonical` ระบุ URL หลักของหน้านั้นๆ เพื่อป้องกันปัญหาเนื้อหาซ้ำซ้อน (Duplicate Content)
   alternates: {
     canonical: '/',
+  },
+
+  // `robots` บอก bot ของ Search Engine ว่าควรทำอย่างไรกับหน้านี้
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 
   // `icons` ใช้สำหรับกำหนด Favicon (ไอคอนบนแท็บเบราว์เซอร์) และไอคอนสำหรับอุปกรณ์ต่างๆ
@@ -76,13 +89,50 @@ export const metadata = {
     locale: 'th_TH', // ระบุภาษาและประเทศ
     type: 'website', // ประเภทของเนื้อหา
   },
+
+  // เพิ่ม Meta Tags สำหรับ Local SEO (ระบุพิกัดพื้นที่กำแพงเพชร)
+  other: {
+    'geo.region': 'TH-62', // รหัสจังหวัดกำแพงเพชร (ISO 3166-2)
+    'geo.placename': 'Kamphaeng Phet',
+    'geo.position': '16.4843;99.5217', // พิกัดโดยประมาณของเทศบาลเมืองกำแพงเพชร
+    'ICBM': '16.4843, 99.5217',
+  },
 };
 
 export default function RootLayout({ children }) {
+  // JSON-LD (Structured Data) ช่วยให้ Google เข้าใจข้อมูลองค์กรได้ดียิ่งขึ้น
+  // เพิ่มโอกาสในการแสดงผลแบบ Rich Results หรือ Knowledge Graph
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalOrganization',
+    'name': 'โรงพยาบาลชุมชนเทศบาลเมืองกำแพงเพชร',
+    'alternateName': 'KPPMCH',
+    'url': siteUrl,
+    'logo': `${siteUrl}/apple-touch-icon.png`,
+    'description': 'บริการตรวจสอบนัดหมายแพทย์ทางไกล (Telemedicine) โรงพยาบาลชุมชนเทศบาลเมืองกำแพงเพชร',
+    'address': {
+      '@type': 'PostalAddress',
+      'addressLocality': 'เมืองกำแพงเพชร',
+      'addressRegion': 'กำแพงเพชร',
+      'addressCountry': 'TH'
+    },
+    // เพิ่มพิกัดแผนที่ใน Structured Data
+    'geo': {
+      '@type': 'GeoCoordinates',
+      'latitude': '16.4843',
+      'longitude': '99.5217'
+    }
+  };
+
   return (
     // `lang="th"` ช่วยให้ Search Engine และเบราว์เซอร์รู้ว่าเนื้อหาหลักในหน้านี้เป็นภาษาไทย
     <html lang="th" className={`${kanit.variable} ${sarabun.variable}`}>
       <body className={`${kanit.variable} ${sarabun.variable}`}>
+        {/* ใส่ JSON-LD Script เพื่อผลลัพธ์ SEO ที่ดีขึ้น */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
       </body>
     </html>

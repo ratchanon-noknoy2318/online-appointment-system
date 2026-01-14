@@ -6,7 +6,7 @@
 
 // นำเข้า Hooks ที่จำเป็นจาก react-dom และไฟล์ CSS
 import { useFormState, useFormStatus } from 'react-dom';
-import styles from './styles/page.module.css';
+import styles from './page.module.css';
 
 // กำหนดค่าเริ่มต้นสำหรับ state ของฟอร์ม
 // message จะเป็น null ในตอนแรก และจะถูกอัปเดตเมื่อ Server Action ทำงานเสร็จ
