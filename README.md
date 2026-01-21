@@ -1,61 +1,38 @@
 # Online Appointment System
-**Digital Scheduling Solution for Healthcare Services**
-
-[Live Demo](https://telemedscheduler.vercel.app/) | [Portfolio](https://ratchanon-portfolio.vercel.app/)
+**Real-time Clinical Scheduling & Management Platform**
 
 ---
 
-### System Visuals
-<p align="center">
-  <img src="https://telemedscheduler.vercel.app//og-image.png" alt="Appointment System Screenshot" width="800">
-</p>
-
----
-
-### Project Overview
-| Category | Detail |
-| :--- | :--- |
-| **Organization** | Kamphaeng Phet Municipality Community Hospital (KPPMCH) |
-| **Primary Stack** | Next.js, React, Tailwind CSS |
-| **Focus** | Resource Scheduling & Patient Experience |
-| **Deployment** | Vercel |
-
----
-
-### Efficiency & Patient Access
-* **The Challenge:** Traditional hospital appointment booking via phone or in-person was time-consuming and prone to human error, resulting in inefficient clinic scheduling.
-* **The Solution:** A 24/7 web-based appointment platform that allows patients to select available slots, reducing the administrative burden on hospital staff and providing instant confirmation to users.
-
----
-
-### Key Features
-* **Smart Scheduling:** Interactive date and time picker integrated with hospital department availability.
-* **Service-Specific Booking:** Ability to choose specific medical clinics or health services (e.g., General, Dental, ANC).
-* **Automated Data Capture:** Seamless collection of patient identifiers and appointment details for HIS integration.
-* **Mobile-First Interface:** Optimized for accessibility on smartphones, which is the primary device for the majority of patients.
-
----
-
-### Technical Infrastructure
-| Component | Technology | Description |
+### Technical Specification
+| Category | Detail | Implementation |
 | :--- | :--- | :--- |
-| **Frontend** | Next.js | Modern SSR/SSG capabilities for fast rendering |
-| **Form Management** | React Hooks | Controlled inputs for complex patient data validation |
-| **Styling** | Tailwind CSS | Consistent and professional medical UI design |
-| **Deployment** | Vercel CI/CD | High-performance edge hosting for zero downtime |
+| **Framework** | Next.js 14 (App Router) | Server Components & Server Actions |
+| **Data Engine** | Google Sheets API | Asynchronous Headless CMS |
+| **Styling** | CSS Modules | BEM Methodology & Scoped Architecture |
+| **Deployment** | Vercel | Edge Runtime & Automated CI/CD |
 
 ---
 
-### Installation & Setup
-1. **Clone Repository:** `git clone https://github.com/ratchanon-noknoy2318/online-appointment-system.git`
-2. **Install Dependencies:** `npm install`
-3. **Local Development:** `npm run dev`
-4. **Production Build:** `npm run build`
+### Architecture & Engineering
+| Component | Implementation Detail |
+| :--- | :--- |
+| **Presentation** | Atomic Design Pattern with React Server Components (RSC) |
+| **Data Access** | Abstraction layer mapping raw API data to structured JSON |
+| **Performance** | Granular loading states via React.Suspense & Edge Caching |
+| **Validation** | Server-side conflict prevention logic for appointment booking |
 
 ---
 
-### Contact & Support
-**Ratchanon Noknoy** (Software Engineer)  
-[LinkedIn](https://www.linkedin.com/in/ratchanon-noknoy/) | [GitHub](https://github.com/ratchanon-noknoy2318)
+### Configuration (`.env`)
+| Variable | Description |
+| :--- | :--- |
+| `GOOGLE_SHEET_ID` | Target Google Spreadsheet ID |
+| `NEXT_PUBLIC_THEME_PRIMARY` | Global primary theme color (Hex) |
 
-*Under MIT License | Copyright (c) 2025 - 2026 Ratchanon Noknoy*
+---
+
+### Quick Start & Contact
+- **Setup:** `npm install && cp .env.example .env.local`
+- **Run:** `npm run dev`
+- **License:** MIT © 2026 Ratchanon Noknoy
+- **Connect:** [LinkedIn](https://www.linkedin.com/in/ratchanon-noknoy/) | [GitHub](https://github.com/Ratchanon2318)
