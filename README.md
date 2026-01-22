@@ -2,6 +2,7 @@
 **Real-time Clinical Scheduling & Management Platform**
 
 ---
+![Project Header](https://telemedscheduler.vercel.app/og-image.png)
 
 ### Technical Specification
 | Category | Detail | Implementation |
