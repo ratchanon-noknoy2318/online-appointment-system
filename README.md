@@ -2,38 +2,51 @@
 **Real-time Clinical Scheduling & Management Platform**
 
 ---
-![Project Header](https://telemedscheduler.vercel.app/og-image.png)
 
-### Technical Specification
-| Category | Detail | Implementation |
-| :--- | :--- | :--- |
-| **Framework** | Next.js 14 (App Router) | Server Components & Server Actions |
-| **Data Engine** | Google Sheets API | Asynchronous Headless CMS |
-| **Styling** | CSS Modules | BEM Methodology & Scoped Architecture |
-| **Deployment** | Vercel | Edge Runtime & Automated CI/CD |
-
----
-
-### Architecture & Engineering
-| Component | Implementation Detail |
+## PDPA & Data Governance
+| Feature | Implementation |
 | :--- | :--- |
-| **Presentation** | Atomic Design Pattern with React Server Components (RSC) |
-| **Data Access** | Abstraction layer mapping raw API data to structured JSON |
-| **Performance** | Granular loading states via React.Suspense & Edge Caching |
-| **Validation** | Server-side conflict prevention logic for appointment booking |
+| **Compliance** | PDPA (Thailand) Standards |
+| **Data Usage** | Purpose-limited to scheduling only |
+| **Privacy** | Server-side processing for data isolation |
+| **Rights** | Facilitates data access and deletion requests |
 
 ---
 
-### Configuration (`.env`)
-| Variable | Description |
+## Technical Stack
+| Category | Specification |
 | :--- | :--- |
-| `GOOGLE_SHEET_ID` | Target Google Spreadsheet ID |
-| `NEXT_PUBLIC_THEME_PRIMARY` | Global primary theme color (Hex) |
+| **Framework** | Next.js 14 (App Router / RSC) |
+| **Database** | Google Sheets API (Headless CMS) |
+| **Styling** | CSS Modules (BEM Methodology) |
+| **Deployment** | Vercel (Edge Runtime) |
 
 ---
 
-### Quick Start & Contact
-- **Setup:** `npm install && cp .env.example .env.local`
-- **Run:** `npm run dev`
-- **License:** MIT © 2026 Ratchanon Noknoy
-- **Connect:** [LinkedIn](https://www.linkedin.com/in/ratchanon-noknoy/) | [GitHub](https://github.com/Ratchanon2318)
+## Engineering Details
+| Component | Implementation |
+| :--- | :--- |
+| **UI Pattern** | Atomic Design & React Suspense |
+| **Data Layer** | API Abstraction & JSON Mapping |
+| **Validation** | Server-side conflict prevention |
+| **Performance** | Edge Caching & Granular Loading |
+
+---
+
+## Configuration & Setup
+| Key | Value / Command |
+| :--- | :--- |
+| **Setup** | `npm install && cp .env.example .env.local` |
+| **Run** | `npm run dev` |
+| **Sheet ID** | `GOOGLE_SHEET_ID` |
+| **Auth** | `GOOGLE_SERVICE_ACCOUNT` |
+
+---
+
+## Metadata & Contact
+| Type | Detail |
+| :--- | :--- |
+| **Author** | Ratchanon Noknoy |
+| **License** | MIT © 2026 |
+| **LinkedIn** | https://www.linkedin.com/in/ratchanon-noknoy/ |
+| **GitHub** | https://github.com/Ratchanon2318 |
